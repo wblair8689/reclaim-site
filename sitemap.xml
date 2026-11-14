@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://reclaimdiskspace.com/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://reclaimdiskspace.com/guides/</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://reclaimdiskspace.com/guides/what-is-system-data-on-mac/</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://reclaimdiskspace.com/guides/clear-cache-on-mac/</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://reclaimdiskspace.com/guides/delete-xcode-derived-data/</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://reclaimdiskspace.com/guides/free-up-space-on-mac/</loc>
+    <lastmod>2026-11-14</lastmod>
   </url>
 </urlset>

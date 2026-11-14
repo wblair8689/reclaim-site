@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Delete Xcode DerivedData and Free Up Space on Mac</title>
+<meta name="description" content="Xcode can quietly use 50 GB or more. Here&#x27;s how to delete DerivedData, old device support files, unavailable simulators and archives, and what&#x27;s safe to remove.">
+<link rel="canonical" href="https://reclaimdiskspace.com/guides/delete-xcode-derived-data/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Reclaim">
+<meta property="og:title" content="How to Delete Xcode DerivedData and Free Up Space on Mac">
+<meta property="og:description" content="Xcode can quietly use 50 GB or more. Here&#x27;s how to delete DerivedData, old device support files, unavailable simulators and archives, and what&#x27;s safe to remove.">
+<meta property="og:url" content="https://reclaimdiskspace.com/guides/delete-xcode-derived-data/">
+<meta property="og:image" content="https://reclaimdiskspace.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to delete Xcode DerivedData (and other Xcode space hogs)", "description": "Xcode can quietly use 50 GB or more. Here's how to delete DerivedData, old device support files, unavailable simulators and archives, and what's safe to remove.", "url": "https://reclaimdiskspace.com/guides/delete-xcode-derived-data/", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "image": "https://reclaimdiskspace.com/og-image.png", "author": {"@type": "Organization", "name": "Reclaim", "url": "https://reclaimdiskspace.com/"}, "publisher": {"@type": "Organization", "name": "Reclaim", "url": "https://reclaimdiskspace.com/", "logo": {"@type": "ImageObject", "url": "https://reclaimdiskspace.com/icon.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Reclaim", "item": "https://reclaimdiskspace.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://reclaimdiskspace.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to delete Xcode DerivedData (and other Xcode space hogs)", "item": "https://reclaimdiskspace.com/guides/delete-xcode-derived-data/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to delete Xcode DerivedData?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. DerivedData only holds build products and indexes that Xcode regenerates. The next build of each project will take longer."}}, {"@type": "Question", "name": "Where is DerivedData on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "By default it is at ~/Library/Developer/Xcode/DerivedData. You can confirm the location in Xcode \u203a Settings \u203a Locations."}}, {"@type": "Question", "name": "Can I delete iOS DeviceSupport folders?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Xcode copies the symbols again the next time you connect a device running that iOS version. Delete folders for versions your devices no longer run."}}]}</script>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/guides/guide.css">
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="/"><img src="/icon.png" alt="">Reclaim</a>
+  <nav><a href="/">Home</a><a href="/guides/">Guides</a><a class="btn" href="https://buy.stripe.com/5kQ5kC1Oa34VeZZdZm0kE00">Buy</a></nav>
+</div></div>
+<main class="wrap"><article>
+<div class="crumbs"><a href="/">Reclaim</a> › <a href="/guides/">Guides</a></div>
+<h1>How to delete Xcode DerivedData (and other Xcode space hogs)</h1>
+<p class="intro">If you develop for Apple platforms, Xcode is probably one of the biggest users of space on your Mac, and most of it is hidden in <code>~/Library/Developer</code>. Here's what each part is and how to clear it.</p>
+<p class="meta">Updated November 14, 2026</p>
+<div class="tldr"><p><strong>Short answer:</strong> Quit Xcode and run <code>rm -rf ~/Library/Developer/Xcode/DerivedData</code>. Xcode rebuilds it on the next build. Then delete old device support folders and run <code>xcrun simctl delete unavailable</code>. Be careful with Archives: keep the ones you shipped.</p></div>
+
+<h2>What's using the space</h2>
+<div class="table-scroll"><table>
+<tr><th>Folder</th><th>What it is</th><th>Safe to delete?</th></tr>
+<tr><td><code>~/Library/Developer/Xcode/DerivedData</code></td><td>Build products, intermediate files and indexes for every project you've opened</td><td>Yes. Rebuilt on the next build.</td></tr>
+<tr><td><code>~/Library/Developer/Xcode/iOS DeviceSupport</code></td><td>Debug symbols copied from each iOS version of each device you've connected</td><td>Yes. Copied again when you reconnect a device.</td></tr>
+<tr><td><code>~/Library/Developer/CoreSimulator/Devices</code></td><td>Simulator devices and the apps and data inside them</td><td>Delete unavailable ones with <code>simctl</code>.</td></tr>
+<tr><td><code>~/Library/Developer/CoreSimulator/Caches</code></td><td>Simulator runtime caches</td><td>Yes.</td></tr>
+<tr><td><code>~/Library/Developer/Xcode/Archives</code></td><td>Archived builds you've exported or uploaded</td><td>Only old ones. You need an archive's dSYMs to read crash reports from that build.</td></tr>
+</table></div>
+
+<h2>Delete DerivedData</h2>
+<h3>From Xcode</h3>
+<p><strong>Product › Clean Build Folder</strong> (Shift-Command-K) only cleans the current project. To clear everything, open <strong>Xcode › Settings › Locations</strong> and click the small arrow next to the DerivedData path. Finder opens the folder. Quit Xcode, then move the folder's contents to the Trash.</p>
+<h3>From Terminal</h3>
+<pre><code>rm -rf ~/Library/Developer/Xcode/DerivedData</code></pre>
+<p>Quit Xcode first. This deletes immediately rather than moving to the Trash. The next build of each project takes longer while Xcode rebuilds and re-indexes.</p>
+<p>Deleting DerivedData also fixes a lot of strange Xcode problems, like stale autocomplete, "No such module" errors and builds that ignore your changes.</p>
+
+<h2>Delete old device support files</h2>
+<p>Each time you connect a device running a new iOS version, Xcode copies several gigabytes of symbols into <code>~/Library/Developer/Xcode/iOS DeviceSupport</code>. Folders are named by OS version and build. Delete the ones for versions your devices no longer run. The same goes for the watchOS, tvOS and visionOS folders next to it.</p>
+
+<h2>Delete unavailable and unused simulators</h2>
+<p>Simulators for runtimes you've removed stay on disk. Remove them with:</p>
+<pre><code>xcrun simctl delete unavailable</code></pre>
+<p>To see how much the runtimes themselves use, and to delete old ones, open <strong>Xcode › Settings › Components</strong> (called <strong>Platforms</strong> in some versions) or run <code>xcrun simctl runtime list</code>. Simulator runtimes are often 5–8 GB each.</p>
+<p>To reset every simulator's apps and data without deleting the devices, run <code>xcrun simctl erase all</code> with the Simulator app closed.</p>
+
+<h2>Clean up archives carefully</h2>
+<p>Archives in <code>~/Library/Developer/Xcode/Archives</code> are organized by date. Open <strong>Window › Organizer</strong> to see them by app and version. Keep archives for builds that are live in the App Store or with testers, because their debug symbols are what turn crash reports into readable stack traces (unless you've uploaded symbols elsewhere). Old development archives can go.</p>
+
+<h2>Other developer caches</h2>
+<p>If you use other toolchains, these also grow large and are safe to clear (packages download again when needed):</p>
+<ul>
+<li>npm: <code>npm cache clean --force</code> (or delete <code>~/.npm/_cacache</code>)</li>
+<li>Yarn, pnpm and Bun: <code>yarn cache clean</code>, <code>pnpm store prune</code>, <code>bun pm cache rm</code></li>
+<li>Gradle: <code>~/.gradle/caches</code></li>
+<li>Cargo: <code>~/.cargo/registry/cache</code></li>
+<li>Homebrew: <code>brew cleanup</code></li>
+<li>Swift Package Manager: <code>~/Library/Caches/org.swift.swiftpm</code></li>
+</ul>
+<h2>Common questions</h2>
+<h3>Is it safe to delete Xcode DerivedData?</h3>
+<p>Yes. DerivedData only holds build products and indexes that Xcode regenerates. The next build of each project will take longer.</p>
+<h3>Where is DerivedData on a Mac?</h3>
+<p>By default it is at ~/Library/Developer/Xcode/DerivedData. You can confirm the location in Xcode › Settings › Locations.</p>
+<h3>Can I delete iOS DeviceSupport folders?</h3>
+<p>Yes. Xcode copies the symbols again the next time you connect a device running that iOS version. Delete folders for versions your devices no longer run.</p>
+<div class="cta">
+  <h2>Do this in a few clicks with Reclaim</h2>
+  <p>Reclaim is a small Mac app that finds caches, logs, Xcode build data, old installers, large files and leftovers from deleted apps. It sorts them by how safe they are to remove, and moves things to the Trash only after you confirm. One-time purchase from $5.</p>
+  <a class="btn" href="/">See Reclaim</a>
+</div>
+<p class="related"><strong>More guides:</strong> <a href="/guides/what-is-system-data-on-mac/">What is System Data?</a> · <a href="/guides/clear-cache-on-mac/">Clear cache on Mac</a> · <a href="/guides/free-up-space-on-mac/">Free up space on Mac</a></p>
+</article></main>
+<footer><div class="wrap"><a href="/">Reclaim</a> · <a href="/guides/">Guides</a> · <a href="/#details">Policies &amp; support</a><br>© 2026 Reclaim · Made for the Mac</div></footer>
+<script data-goatcounter="https://reclaim.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

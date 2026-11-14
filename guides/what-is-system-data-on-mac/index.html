@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is System Data on Mac, and How Do You Reduce It?</title>
+<meta name="description" content="System Data on your Mac can grow to 50 GB or more. Here&#x27;s what&#x27;s inside it, which parts are safe to clear, and how to shrink it without breaking anything.">
+<link rel="canonical" href="https://reclaimdiskspace.com/guides/what-is-system-data-on-mac/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Reclaim">
+<meta property="og:title" content="What Is System Data on Mac, and How Do You Reduce It?">
+<meta property="og:description" content="System Data on your Mac can grow to 50 GB or more. Here&#x27;s what&#x27;s inside it, which parts are safe to clear, and how to shrink it without breaking anything.">
+<meta property="og:url" content="https://reclaimdiskspace.com/guides/what-is-system-data-on-mac/">
+<meta property="og:image" content="https://reclaimdiskspace.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What is System Data on a Mac, and how do you shrink it?", "description": "System Data on your Mac can grow to 50 GB or more. Here's what's inside it, which parts are safe to clear, and how to shrink it without breaking anything.", "url": "https://reclaimdiskspace.com/guides/what-is-system-data-on-mac/", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "image": "https://reclaimdiskspace.com/og-image.png", "author": {"@type": "Organization", "name": "Reclaim", "url": "https://reclaimdiskspace.com/"}, "publisher": {"@type": "Organization", "name": "Reclaim", "url": "https://reclaimdiskspace.com/", "logo": {"@type": "ImageObject", "url": "https://reclaimdiskspace.com/icon.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Reclaim", "item": "https://reclaimdiskspace.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://reclaimdiskspace.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "What is System Data on a Mac, and how do you shrink it?", "item": "https://reclaimdiskspace.com/guides/what-is-system-data-on-mac/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to delete System Data on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Parts of it are. App caches, logs, Time Machine local snapshots and Xcode build data are safe to remove because they are rebuilt or not needed. Files inside /System and /private/var belong to macOS and should be left alone."}}, {"@type": "Question", "name": "Why is my System Data so large?", "acceptedAnswer": {"@type": "Answer", "text": "Common causes are large app caches, Time Machine local snapshots while your backup drive is disconnected, Xcode and simulator data, and data left behind by apps you deleted."}}, {"@type": "Question", "name": "Does restarting a Mac reduce System Data?", "acceptedAnswer": {"@type": "Answer", "text": "Often, yes. A restart clears swap files and some temporary data and gives macOS a chance to remove snapshots and leftover update files."}}]}</script>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/guides/guide.css">
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="/"><img src="/icon.png" alt="">Reclaim</a>
+  <nav><a href="/">Home</a><a href="/guides/">Guides</a><a class="btn" href="https://buy.stripe.com/5kQ5kC1Oa34VeZZdZm0kE00">Buy</a></nav>
+</div></div>
+<main class="wrap"><article>
+<div class="crumbs"><a href="/">Reclaim</a> › <a href="/guides/">Guides</a></div>
+<h1>What is System Data on a Mac, and how do you shrink it?</h1>
+<p class="intro">You open Storage settings and a grey bar labeled <strong>System Data</strong> is taking up 40, 80, even 150 GB. Here's what that bar contains and what you can do about it.</p>
+<p class="meta">Updated November 14, 2026</p>
+<div class="tldr"><p><strong>Short answer:</strong> System Data is everything macOS can't put in another category: caches, logs, Time Machine snapshots, app support files, developer tools and virtual memory. Much of it is temporary. Clearing app caches, logs, Xcode build data and old local snapshots usually brings it down a lot. Don't delete anything inside <code>/System</code> or <code>/private/var</code> by hand.</p></div>
+
+<h2>Where to see it</h2>
+<p>Open <strong>System Settings › General › Storage</strong>. The bar at the top splits your disk into Applications, Documents, Photos, iCloud Drive, macOS and so on. <strong>System Data</strong> is the leftover bucket (older versions of macOS called it "Other"). Unlike the other categories, you can't click into it to see what's inside.</p>
+
+<h2>What's actually in System Data</h2>
+<div class="table-scroll"><table>
+<tr><th>What</th><th>Where it lives</th><th>Safe to clear?</th></tr>
+<tr><td>App caches</td><td><code>~/Library/Caches</code></td><td>Yes. Apps rebuild them. See <a href="/guides/clear-cache-on-mac/">how to clear cache on Mac</a>.</td></tr>
+<tr><td>Logs and crash reports</td><td><code>~/Library/Logs</code></td><td>Yes. Only needed when troubleshooting.</td></tr>
+<tr><td>Time Machine local snapshots</td><td>Inside the system volume</td><td>Yes, with <code>tmutil</code> (below). macOS also removes them when space runs low.</td></tr>
+<tr><td>Xcode build data and simulators</td><td><code>~/Library/Developer</code></td><td>Mostly. See <a href="/guides/delete-xcode-derived-data/">deleting Xcode DerivedData</a>.</td></tr>
+<tr><td>Package manager caches</td><td><code>~/.npm</code>, <code>~/.gradle</code>, <code>~/.cargo</code>, <code>~/.cache</code></td><td>Yes. Packages download again when needed.</td></tr>
+<tr><td>Data from apps you deleted</td><td><code>~/Library/Application Support</code>, <code>~/Library/Containers</code></td><td>Usually, once you're sure the app is gone for good.</td></tr>
+<tr><td>Virtual memory and sleep image</td><td><code>/private/var/vm</code></td><td>No. macOS manages these. A restart shrinks swap.</td></tr>
+<tr><td>macOS's own files and updates</td><td><code>/System</code>, <code>/Library</code></td><td>No. Leave them alone.</td></tr>
+</table></div>
+
+<h2>How to reduce System Data, step by step</h2>
+<h3>1. Restart your Mac</h3>
+<p>It sounds too simple, but a restart clears swap files and some temporary data, and it lets macOS finish removing snapshots and leftover update files. Check Storage again afterward.</p>
+
+<h3>2. Clear app caches and logs</h3>
+<p>Quit your apps, then in Finder choose <strong>Go › Go to Folder</strong> (Shift-Command-G) and open <code>~/Library/Caches</code>. Sort by size and move the biggest folders to the Trash. Do the same for <code>~/Library/Logs</code>. Our <a href="/guides/clear-cache-on-mac/">cache guide</a> covers which folders to skip.</p>
+
+<h3>3. Remove old Time Machine local snapshots</h3>
+<p>If you use Time Machine, your Mac keeps hourly snapshots on the internal disk while the backup drive is disconnected. To see them, open Terminal and run:</p>
+<pre><code>tmutil listlocalsnapshots /</code></pre>
+<p>To delete one, use the date from that list:</p>
+<pre><code>sudo tmutil deletelocalsnapshots 2026-11-10-093015</code></pre>
+<p>Connecting your backup drive and letting a backup finish also lets macOS clean these up on its own.</p>
+
+<h3>4. If you're a developer, clear Xcode and package caches</h3>
+<p>Xcode's DerivedData, device support files and old simulators often add up to 20–100 GB. They're safe to delete and Xcode rebuilds what it needs. See <a href="/guides/delete-xcode-derived-data/">how to delete Xcode DerivedData</a>.</p>
+
+<h3>5. Remove leftovers from apps you've deleted</h3>
+<p>Dragging an app to the Trash leaves its data behind in <code>~/Library/Application Support</code> and <code>~/Library/Containers</code>. Folders are usually named after the app or its developer (for example <code>com.vendor.appname</code>). If the app is gone and you won't reinstall it, those folders can go too.</p>
+
+<div class="note"><strong>Don't</strong> delete anything inside <code>/System</code>, <code>/private/var</code> or <code>/Library/Apple</code>. Those are part of macOS, are mostly protected anyway, and deleting what isn't protected can stop your Mac from starting up.</div>
+
+<h2>Why System Data comes back</h2>
+<p>Caches and logs grow again as you use your Mac, and that's normal. The goal isn't to get System Data to zero, it's to get rid of the large, stale parts: a 30 GB cache from an app you stopped using, years of Xcode builds, or backups of an iPhone you no longer own.</p>
+<h2>Common questions</h2>
+<h3>Is it safe to delete System Data on a Mac?</h3>
+<p>Parts of it are. App caches, logs, Time Machine local snapshots and Xcode build data are safe to remove because they are rebuilt or not needed. Files inside /System and /private/var belong to macOS and should be left alone.</p>
+<h3>Why is my System Data so large?</h3>
+<p>Common causes are large app caches, Time Machine local snapshots while your backup drive is disconnected, Xcode and simulator data, and data left behind by apps you deleted.</p>
+<h3>Does restarting a Mac reduce System Data?</h3>
+<p>Often, yes. A restart clears swap files and some temporary data and gives macOS a chance to remove snapshots and leftover update files.</p>
+<div class="cta">
+  <h2>Do this in a few clicks with Reclaim</h2>
+  <p>Reclaim is a small Mac app that finds caches, logs, Xcode build data, old installers, large files and leftovers from deleted apps. It sorts them by how safe they are to remove, and moves things to the Trash only after you confirm. One-time purchase from $5.</p>
+  <a class="btn" href="/">See Reclaim</a>
+</div>
+<p class="related"><strong>More guides:</strong> <a href="/guides/clear-cache-on-mac/">Clear cache on Mac</a> · <a href="/guides/free-up-space-on-mac/">Free up space on Mac</a> · <a href="/guides/delete-xcode-derived-data/">Delete Xcode DerivedData</a></p>
+</article></main>
+<footer><div class="wrap"><a href="/">Reclaim</a> · <a href="/guides/">Guides</a> · <a href="/#details">Policies &amp; support</a><br>© 2026 Reclaim · Made for the Mac</div></footer>
+<script data-goatcounter="https://reclaim.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

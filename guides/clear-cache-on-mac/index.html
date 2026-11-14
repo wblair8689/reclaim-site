@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Clear Cache on Mac Safely (and Which Caches to Skip)</title>
+<meta name="description" content="Is it safe to delete ~/Library/Caches? Yes, mostly. Here&#x27;s how to clear app and browser caches on a Mac, which folders to skip, and what to expect afterward.">
+<link rel="canonical" href="https://reclaimdiskspace.com/guides/clear-cache-on-mac/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Reclaim">
+<meta property="og:title" content="How to Clear Cache on Mac Safely (and Which Caches to Skip)">
+<meta property="og:description" content="Is it safe to delete ~/Library/Caches? Yes, mostly. Here&#x27;s how to clear app and browser caches on a Mac, which folders to skip, and what to expect afterward.">
+<meta property="og:url" content="https://reclaimdiskspace.com/guides/clear-cache-on-mac/">
+<meta property="og:image" content="https://reclaimdiskspace.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to clear cache on a Mac safely", "description": "Is it safe to delete ~/Library/Caches? Yes, mostly. Here's how to clear app and browser caches on a Mac, which folders to skip, and what to expect afterward.", "url": "https://reclaimdiskspace.com/guides/clear-cache-on-mac/", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "image": "https://reclaimdiskspace.com/og-image.png", "author": {"@type": "Organization", "name": "Reclaim", "url": "https://reclaimdiskspace.com/"}, "publisher": {"@type": "Organization", "name": "Reclaim", "url": "https://reclaimdiskspace.com/", "logo": {"@type": "ImageObject", "url": "https://reclaimdiskspace.com/icon.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Reclaim", "item": "https://reclaimdiskspace.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://reclaimdiskspace.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to clear cache on a Mac safely", "item": "https://reclaimdiskspace.com/guides/clear-cache-on-mac/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it safe to delete everything in ~/Library/Caches?", "acceptedAnswer": {"@type": "Answer", "text": "Almost everything. Apps recreate their cache files. Quit apps first, and leave sync-related folders such as CloudKit and com.apple.bird alone to avoid forcing iCloud to resync."}}, {"@type": "Question", "name": "Will I lose passwords or settings if I clear cache?", "acceptedAnswer": {"@type": "Answer", "text": "No. Passwords live in the keychain and settings live in ~/Library/Preferences. Clearing browser cookies, which is a separate option, is what signs you out of websites."}}, {"@type": "Question", "name": "How often should I clear cache on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Only when you need disk space or an app is misbehaving. Caches help apps run faster, so clearing them on a schedule isn't necessary."}}]}</script>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/guides/guide.css">
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="/"><img src="/icon.png" alt="">Reclaim</a>
+  <nav><a href="/">Home</a><a href="/guides/">Guides</a><a class="btn" href="https://buy.stripe.com/5kQ5kC1Oa34VeZZdZm0kE00">Buy</a></nav>
+</div></div>
+<main class="wrap"><article>
+<div class="crumbs"><a href="/">Reclaim</a> › <a href="/guides/">Guides</a></div>
+<h1>How to clear cache on a Mac safely</h1>
+<p class="intro">Caches are files apps save so they don't have to download or calculate the same thing twice. Over time they can grow to many gigabytes. Here's how to clear them without causing problems.</p>
+<p class="meta">Updated November 14, 2026</p>
+<div class="tldr"><p><strong>Short answer:</strong> Quit your apps, open <code>~/Library/Caches</code> in Finder, and move the biggest folders to the Trash. Apps rebuild what they need. Skip system folders like <code>/System/Library/Caches</code>, and don't clear caches for sync services (like CloudKit) while they're syncing.</p></div>
+
+<h2>Is it safe to delete ~/Library/Caches?</h2>
+<p>For the most part, yes. Files in your user cache folder are, by design, data an app can recreate. Deleting them doesn't remove your documents, settings or passwords. The cost is that some apps feel slower the first time you open them afterward while they rebuild, and you may be signed out of a website or two.</p>
+<p>There are a few exceptions, below.</p>
+
+<h2>How to clear app caches</h2>
+<ol>
+<li><strong>Quit the apps</strong> whose caches you want to clear. An app that's running can recreate files while you delete them or behave oddly.</li>
+<li>In Finder, choose <strong>Go › Go to Folder</strong> (Shift-Command-G), type <code>~/Library/Caches</code> and press Return.</li>
+<li>Choose <strong>View › as List</strong>, then <strong>View › Show View Options</strong> and turn on <strong>Calculate all sizes</strong>. Click the Size column to sort.</li>
+<li>Select the large folders you want to clear and move them to the Trash (Command-Delete).</li>
+<li>Open your apps and check they work, then empty the Trash.</li>
+</ol>
+<p>Folder names are usually the app's identifier, like <code>com.spotify.client</code> or <code>com.google.Chrome</code>, so it's easy to see what belongs to what.</p>
+
+<h2>Caches to leave alone</h2>
+<ul>
+<li><strong>System caches</strong> in <code>/System/Library/Caches</code> and <code>/Library/Caches</code>. These belong to macOS, are mostly protected, and are small anyway.</li>
+<li><strong>Sync and account services</strong> such as <code>CloudKit</code>, <code>com.apple.bird</code> (iCloud Drive) and <code>com.apple.HomeKit</code>. Clearing these can force a long resync or cause sync glitches.</li>
+<li><strong>Caches of apps that are running.</strong> Quit first.</li>
+</ul>
+
+<h2>How to clear browser cache</h2>
+<h3>Safari</h3>
+<p>Choose <strong>Safari › Settings › Advanced</strong> and turn on <strong>Show features for web developers</strong>. A Develop menu appears in the menu bar. Choose <strong>Develop › Empty Caches</strong>. This clears cached web files without signing you out of websites.</p>
+<h3>Chrome</h3>
+<p>Open <code>chrome://settings/clearBrowserData</code>, choose a time range, tick <strong>Cached images and files</strong> only, and click <strong>Delete data</strong>. Leave cookies unticked if you want to stay signed in.</p>
+<h3>Firefox</h3>
+<p>Open <strong>Settings › Privacy &amp; Security › Cookies and Site Data › Clear Data</strong>, tick <strong>Cached Web Content</strong> only, and click <strong>Clear</strong>.</p>
+
+<h2>Other caches worth checking</h2>
+<ul>
+<li><strong>Logs:</strong> <code>~/Library/Logs</code> holds diagnostic logs and crash reports. Safe to clear unless you're troubleshooting something.</li>
+<li><strong>Developer caches:</strong> <code>~/.npm</code>, <code>~/.gradle/caches</code>, <code>~/.cargo/registry/cache</code> and <code>~/Library/Developer/Xcode/DerivedData</code> can be very large. See <a href="/guides/delete-xcode-derived-data/">our Xcode guide</a>.</li>
+<li><strong>Command-line tool caches:</strong> <code>~/.cache</code> often holds downloaded AI models, which can be several gigabytes each. Safe to delete, but they're slow to download again.</li>
+<li><strong>Mail attachments:</strong> attachments you've opened in Mail are copied to <code>~/Library/Containers/com.apple.mail/Data/Library/Mail Downloads</code>. The originals stay in your mailbox.</li>
+</ul>
+
+<h2>Will clearing cache speed up my Mac?</h2>
+<p>Usually not by much. Clearing caches frees disk space, and that matters a lot when your disk is nearly full: macOS needs free space for virtual memory and updates. But on a Mac with plenty of space, caches help apps run faster, so clearing them all on a schedule isn't worth it. Clear them when you need the space or when one app is misbehaving.</p>
+<h2>Common questions</h2>
+<h3>Is it safe to delete everything in ~/Library/Caches?</h3>
+<p>Almost everything. Apps recreate their cache files. Quit apps first, and leave sync-related folders such as CloudKit and com.apple.bird alone to avoid forcing iCloud to resync.</p>
+<h3>Will I lose passwords or settings if I clear cache?</h3>
+<p>No. Passwords live in the keychain and settings live in ~/Library/Preferences. Clearing browser cookies, which is a separate option, is what signs you out of websites.</p>
+<h3>How often should I clear cache on a Mac?</h3>
+<p>Only when you need disk space or an app is misbehaving. Caches help apps run faster, so clearing them on a schedule isn&#x27;t necessary.</p>
+<div class="cta">
+  <h2>Do this in a few clicks with Reclaim</h2>
+  <p>Reclaim is a small Mac app that finds caches, logs, Xcode build data, old installers, large files and leftovers from deleted apps. It sorts them by how safe they are to remove, and moves things to the Trash only after you confirm. One-time purchase from $5.</p>
+  <a class="btn" href="/">See Reclaim</a>
+</div>
+<p class="related"><strong>More guides:</strong> <a href="/guides/what-is-system-data-on-mac/">What is System Data?</a> · <a href="/guides/free-up-space-on-mac/">Free up space on Mac</a> · <a href="/guides/delete-xcode-derived-data/">Delete Xcode DerivedData</a></p>
+</article></main>
+<footer><div class="wrap"><a href="/">Reclaim</a> · <a href="/guides/">Guides</a> · <a href="/#details">Policies &amp; support</a><br>© 2026 Reclaim · Made for the Mac</div></footer>
+<script data-goatcounter="https://reclaim.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
