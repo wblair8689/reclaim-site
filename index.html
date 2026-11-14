@@ -21,6 +21,8 @@
 <meta name="twitter:description" content="Reclaim shows what's filling up your Mac and helps you safely clean up caches, old installers, large files and unused apps. One-time purchase from $5.">
 <meta name="twitter:image" content="https://reclaimdiskspace.com/og-image.png">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Reclaim", "description": "Reclaim shows what's filling up your Mac and helps you safely clean up caches, old installers, large files and unused apps. One-time purchase from $5.", "url": "https://reclaimdiskspace.com/", "image": "https://reclaimdiskspace.com/og-image.png", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS 15 or later", "softwareVersion": "1.0", "offers": {"@type": "Offer", "price": "5.00", "priceCurrency": "USD", "url": "https://reclaimdiskspace.com/", "availability": "https://schema.org/InStock"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Reclaim", "url": "https://reclaimdiskspace.com/", "logo": "https://reclaimdiskspace.com/icon.png", "email": "support@reclaimdiskspace.com", "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "support@reclaimdiskspace.com"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will it delete something my Mac needs?", "acceptedAnswer": {"@type": "Answer", "text": "Not unless you tell it to. Reclaim never deletes anything on its own. It sorts what it finds by how safe it is to remove, and nothing is deleted until you review it and confirm."}}, {"@type": "Question", "name": "What happens to deleted files?", "acceptedAnswer": {"@type": "Answer", "text": "By default they go to the Trash, so you can restore them. Permanent deletion only happens when you choose it."}}, {"@type": "Question", "name": "Is there a free trial?", "acceptedAnswer": {"@type": "Answer", "text": "No, there's no trial version. There is a 30-day refund instead: if Reclaim doesn't work for you, email us within 30 days of purchase and we'll refund you in full, no questions asked."}}, {"@type": "Question", "name": "Is it a subscription?", "acceptedAnswer": {"@type": "Answer", "text": "No. Reclaim is a one-time purchase. You choose the price, starting at $5, and your purchase includes all future updates."}}, {"@type": "Question", "name": "What is System Data?", "acceptedAnswer": {"@type": "Answer", "text": "System Data is the catch-all category in your Mac's Storage settings. It lumps together caches, logs, temporary files and other things macOS doesn't count as apps, documents or photos, and macOS doesn't show you what's inside it. Reclaim lets you browse your drive by folder to see where the space went, and it finds caches, logs, old installers and leftovers from deleted apps, sorted by how safe they are to remove."}}, {"@type": "Question", "name": "Why does \"What is this?\" need macOS 26?", "acceptedAnswer": {"@type": "Answer", "text": "\"What is this?\" explains unfamiliar files using Apple Intelligence on your Mac, not an online service, so your files and file names stay on your Mac. That needs macOS 26 or later on a Mac that supports Apple Intelligence. Everything else in Reclaim works on macOS 15 Sequoia or later."}}]}</script>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
   :root {
@@ -62,11 +64,11 @@
   .buy[aria-disabled="true"] { opacity: 0.6; cursor: default; }
   .price { color: var(--muted); font-size: 15px; margin-top: 12px; }
   nav.links { text-align: center; font-size: 15px; margin-bottom: 8px; }
-  nav.links a { color: var(--muted); margin: 0 10px; }
+  nav.links a { color: var(--muted); margin: 0 6px; padding: 8px 4px; display: inline-block; }
   section { padding: 36px 0; border-top: 1px solid var(--border); }
   h2 { font-size: 26px; margin: 0 0 16px; letter-spacing: -0.01em; }
   h3 { font-size: 18px; margin: 0 0 4px; }
-  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px; }
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
   .card p { margin: 0; color: var(--muted); font-size: 15px; }
   ul { padding-left: 20px; }
@@ -74,6 +76,28 @@
   .small { font-size: 15px; color: var(--muted); }
   a { color: var(--accent); }
   footer { padding: 32px 0 48px; border-top: 1px solid var(--border); text-align: center; font-size: 14px; color: var(--muted); }
+  footer p { margin: 0 0 6px; }
+  .eyebrow { font-size: 15px; font-weight: 600; color: var(--muted); margin: 16px 0 0; }
+  .eyebrow + h1 { margin-top: 4px; }
+  .cta { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 20px; }
+  .secondary { font-weight: 600; text-decoration: none; padding: 12px 4px; }
+  .lead-in { margin: 0 0 20px; }
+  .features.lead { margin-bottom: 16px; }
+  .features.lead .card { border-top: 3px solid var(--accent); }
+  .features.lead h3 { font-size: 20px; }
+  .features.lead p { font-size: 16px; color: var(--text); }
+  .features + .small { margin-bottom: 0; }
+  .shot { margin: 32px 0 0; }
+  .card .shot { margin: 14px 0 0; }
+  .shot img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); }
+  .shot figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; text-align: center; }
+  .quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px; }
+  .quote { margin: 0; }
+  .quote blockquote { margin: 0 0 8px; }
+  .quote figcaption { font-size: 14px; color: var(--muted); }
+  .qa { margin: 0 0 20px; }
+  .qa p { margin: 0; }
+  .anchor { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; padding: 12px 16px; font-weight: 600; }
   @media (max-width: 480px) { h1 { font-size: 34px; } .tagline { font-size: 18px; } }
 </style>
 </head>
@@ -82,14 +106,31 @@
 
 <header class="hero">
   <img src="icon.png" alt="Reclaim app icon">
+  <p class="eyebrow">A Mac disk space analyzer and cleaner</p>
   <h1>Reclaim</h1>
-  <p class="tagline">See what's filling up your Mac and clean it up safely, without guessing.</p>
-  <a class="buy" id="buy" href="https://buy.stripe.com/5kQ5kC1Oa34VeZZdZm0kE00">Buy Reclaim</a>
-  <p class="price">Pay what you want, from $5 · One-time purchase · Free updates</p>
+  <p class="tagline">See what's filling up your Mac, free up space safely, without guessing.</p>
+  <div class="cta">
+    <a class="buy" id="buy" href="https://buy.stripe.com/5kQ5kC1Oa34VeZZdZm0kE00">Buy Reclaim</a>
+    <a class="secondary" href="#features">See what it does</a>
+  </div>
+  <p class="price">Pay what you want, from $5 · One-time purchase, not a subscription · Free updates</p>
+
+  <!-- TODO (audit D3.1, quantity proof): once you have a real number from Stripe or your download logs,
+       uncomment this line and replace N. Do not publish a rounded or invented number.
+  <p class="price"><strong>N Macs cleaned so far</strong></p>
+  -->
+
+  <!-- TODO (audit D1.5, D2.1, hero screenshot): save a real screenshot of the disk map as screenshots/disk-map.png,
+       set width and height to the image's real pixel size, adjust the alt text to what the picture shows, then uncomment.
+  <figure class="shot">
+    <img src="screenshots/disk-map.png" width="1520" height="950" alt="Reclaim's disk map showing a 256 GB MacBook drive with large folders highlighted">
+  </figure>
+  -->
 </header>
 
 <nav class="links">
   <a href="#features">Features</a>
+  <a href="#faq">FAQ</a>
   <a href="#pricing">Pricing</a>
   <a href="#refunds">Refunds</a>
   <a href="#contact">Contact</a>
@@ -99,20 +140,74 @@
 
 <section id="features">
   <h2>What Reclaim does</h2>
+  <p class="lead-in">Reclaim is for when macOS says "Your disk is almost full" and you can't tell what is taking up space on your Mac. It does one job, disk space. It isn't an antivirus or a "speed up your Mac" suite.</p>
+  <div class="features lead">
+    <div class="card">
+      <h3>Disk usage map</h3>
+      <p>Browse your drive by folder and see exactly where the space went.</p>
+      <!-- TODO (audit D1.5, optional third screenshot): a folder opened in the disk map. Same steps as the hero screenshot.
+      <figure class="shot">
+        <img src="screenshots/disk-map-folder.png" width="1520" height="950" loading="lazy" alt="Reclaim's disk map opened to one folder, showing the size of each subfolder">
+      </figure>
+      -->
+    </div>
+    <div class="card">
+      <h3>Safe cleanup</h3>
+      <p>Finds caches, logs, old installers and leftovers from deleted apps, sorted by how safe they are to remove.</p>
+      <!-- TODO (audit D1.5, D2.3, cleanup screenshot): save a real screenshot of the safe-cleanup list as screenshots/safe-cleanup.png,
+           set width and height to the image's real pixel size, adjust the alt text to what the picture shows, then uncomment.
+      <figure class="shot">
+        <img src="screenshots/safe-cleanup.png" width="1520" height="950" loading="lazy" alt="Reclaim's safe cleanup list with caches, logs and old installers sorted by how safe they are to remove">
+      </figure>
+      -->
+    </div>
+  </div>
   <div class="features">
-    <div class="card"><h3>Disk usage map</h3><p>Browse your drive by folder and see exactly where the space went.</p></div>
-    <div class="card"><h3>Safe cleanup</h3><p>Finds caches, logs, old installers and leftovers from deleted apps, sorted by how safe they are to remove.</p></div>
     <div class="card"><h3>Large files</h3><p>Lists the biggest files on your Mac so you can decide what to keep.</p></div>
     <div class="card"><h3>Unused apps</h3><p>Shows apps you haven't opened in a long time, with their size, and removes them cleanly.</p></div>
     <div class="card"><h3>iCloud offload</h3><p>Moves files to iCloud Drive or removes local copies of files already stored there.</p></div>
-    <div class="card"><h3>"What is this?"</h3><p>Explains what an unfamiliar file or folder is for, using Apple Intelligence entirely on your Mac.</p></div>
+    <div class="card"><h3>"What is this?"</h3><p>Explains what an unfamiliar file or folder is for, using Apple Intelligence entirely on your Mac. Needs macOS 26 or later on a Mac that supports Apple Intelligence.</p></div>
   </div>
   <p class="small">Nothing is deleted until you review it and confirm. By default, items go to the Trash so you can restore them.</p>
+</section>
+
+<!-- TODO (audit D3.2, testimonials): email your first buyers and ask for one line each, with first name, context
+     (for example "MacBook Air, 256 GB") and the GB they freed. Publish 3 real ones, with the price they paid if they agree,
+     then uncomment this section. Never use stock or made-up quotes.
+<section id="reviews">
+  <h2>What buyers say</h2>
+  <div class="quotes">
+    <figure class="card quote">
+      <blockquote>QUOTE 1, in the buyer's own words</blockquote>
+      <figcaption>FIRST NAME · MAC MODEL, DRIVE SIZE · freed N GB</figcaption>
+    </figure>
+    <figure class="card quote">
+      <blockquote>QUOTE 2, in the buyer's own words</blockquote>
+      <figcaption>FIRST NAME · MAC MODEL, DRIVE SIZE · freed N GB</figcaption>
+    </figure>
+    <figure class="card quote">
+      <blockquote>QUOTE 3, in the buyer's own words</blockquote>
+      <figcaption>FIRST NAME · MAC MODEL, DRIVE SIZE · freed N GB</figcaption>
+    </figure>
+  </div>
+</section>
+-->
+
+<section id="faq">
+  <h2>Questions people ask before buying</h2>
+  <div class="qa"><h3>Will it delete something my Mac needs?</h3><p>Not unless you tell it to. Reclaim never deletes anything on its own. It sorts what it finds by how safe it is to remove, and nothing is deleted until you review it and confirm.</p></div>
+  <div class="qa"><h3>What happens to deleted files?</h3><p>By default they go to the Trash, so you can restore them. Permanent deletion only happens when you choose it.</p></div>
+  <div class="qa"><h3>Is there a free trial?</h3><p>No, there's no trial version. There is a 30-day refund instead: if Reclaim doesn't work for you, email us within 30 days of purchase and we'll refund you in full, no questions asked.</p></div>
+  <div class="qa"><h3>Is it a subscription?</h3><p>No. Reclaim is a one-time purchase. You choose the price, starting at $5, and your purchase includes all future updates.</p></div>
+  <div class="qa"><h3>What is System Data?</h3><p>System Data is the catch-all category in your Mac's Storage settings. It lumps together caches, logs, temporary files and other things macOS doesn't count as apps, documents or photos, and macOS doesn't show you what's inside it. Reclaim lets you browse your drive by folder to see where the space went, and it finds caches, logs, old installers and leftovers from deleted apps, sorted by how safe they are to remove.</p></div>
+  <div class="qa"><h3>Why does "What is this?" need macOS 26?</h3><p>"What is this?" explains unfamiliar files using Apple Intelligence on your Mac, not an online service, so your files and file names stay on your Mac. That needs macOS 26 or later on a Mac that supports Apple Intelligence. Everything else in Reclaim works on macOS 15 Sequoia or later.</p></div>
+  <p class="small">Comparing apps? See <a href="/vs/reclaim-vs-daisydisk">Reclaim vs DaisyDisk</a> and <a href="/vs/reclaim-vs-cleanmymac">Reclaim vs CleanMyMac</a>.</p>
 </section>
 
 <section id="pricing">
   <h2>Pricing</h2>
   <p>Reclaim is a one-time purchase. You choose the price, starting at <strong>$5 USD</strong> (suggested $8). Your purchase includes all future updates. There is no subscription.</p>
+  <p class="anchor">One-time. Not a subscription. CleanMyMac-style suites charge $40+ every year; pay once, keep it forever.</p>
   <p>After checkout you'll get a download link and an email receipt. Payment, sales tax and receipts are handled by Stripe.</p>
   <p class="small"><strong>Requirements:</strong> macOS 15 Sequoia or later. The "What is this?" explanations need macOS 26 or later on a Mac that supports Apple Intelligence.</p>
 </section>
@@ -120,6 +215,9 @@
 <section id="refunds">
   <h2>Refund policy</h2>
   <p>If Reclaim doesn't work for you, email us within <strong>30 days</strong> of purchase and we'll refund you in full. No questions asked.</p>
+  <p class="small">Reclaim is signed and notarized by Apple. Payment and receipts are handled by Stripe.</p>
+  <!-- TODO (audit D3.5, third-party proof): after you launch on Product Hunt, paste the dated badge embed here.
+       If Reclaim gets a Mac App Store listing, link it here with its live rating once reviews exist. -->
 </section>
 
 <section id="contact">
@@ -148,7 +246,14 @@
 
 </div>
 <footer>
-  <div class="wrap">© 2026 Reclaim · Made for the Mac</div>
+  <div class="wrap">
+    <!-- TODO (audit D3.3, founder identity): replace the placeholders with your real name and one real profile link,
+         then uncomment. Add the same link to "sameAs" in the Organization JSON-LD in the head.
+    <p>Made by YOUR NAME, an indie Mac developer · <a href="YOUR X OR LINKEDIN URL">YOUR HANDLE</a></p>
+    -->
+    <p>© 2026 Reclaim · Made for the Mac</p>
+    <p><a href="/about">About</a> · <a href="/vs/reclaim-vs-daisydisk">Reclaim vs DaisyDisk</a> · <a href="/vs/reclaim-vs-cleanmymac">Reclaim vs CleanMyMac</a> · <a href="mailto:support@reclaimdiskspace.com">support@reclaimdiskspace.com</a></p>
+  </div>
 </footer>
 </body>
 </html>

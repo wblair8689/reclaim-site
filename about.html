@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Reclaim — what it does and doesn't touch on your Mac</title>
+<meta name="description" content="Reclaim is a Mac disk space analyzer and cleaner that runs entirely on your Mac. What it touches, what it never does, and how to reach us.">
+<link rel="canonical" href="https://reclaimdiskspace.com/about">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Reclaim">
+<meta property="og:title" content="About Reclaim — what it does and doesn't touch on your Mac">
+<meta property="og:description" content="Reclaim is a Mac disk space analyzer and cleaner that runs entirely on your Mac. What it touches, what it never does, and how to reach us.">
+<meta property="og:url" content="https://reclaimdiskspace.com/about">
+<meta property="og:image" content="https://reclaimdiskspace.com/og-image.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/favicon.png">
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f5f6f8;
+    --text: #1d1f23;
+    --muted: #5c6370;
+    --border: #e3e5e9;
+    --accent: #2f6fde;
+    --accent-text: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141518;
+      --surface: #1e2025;
+      --text: #eceef1;
+      --muted: #a2a8b3;
+      --border: #2e3138;
+      --accent: #5b92f0;
+      --accent-text: #0d1220;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+  .top { padding: 20px 0; }
+  .top a { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 600; }
+  .top img { width: 36px; height: 36px; }
+  header.page { padding: 24px 0 32px; }
+  h1 { font-size: 40px; line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .tagline { font-size: 20px; color: var(--muted); margin: 0; }
+  .buy {
+    display: inline-block; background: var(--accent); color: var(--accent-text);
+    text-decoration: none; font-weight: 600; padding: 12px 28px; border-radius: 10px;
+  }
+  .price { color: var(--muted); font-size: 15px; margin-top: 12px; }
+  section { padding: 36px 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 26px; margin: 0 0 16px; letter-spacing: -0.01em; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  .small { font-size: 15px; color: var(--muted); }
+  a { color: var(--accent); }
+  .founder { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+  .founder img { width: 96px; height: 96px; border-radius: 50%; }
+  .founder div { flex: 1 1 260px; }
+  footer { padding: 32px 0 48px; border-top: 1px solid var(--border); text-align: center; font-size: 14px; color: var(--muted); }
+  footer p { margin: 0 0 6px; }
+  @media (max-width: 480px) { h1 { font-size: 32px; } .tagline { font-size: 18px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="top"><a href="/"><img src="/icon.png" alt="">Reclaim</a></div>
+
+<header class="page">
+  <h1>About Reclaim</h1>
+  <p class="tagline">A Mac disk space analyzer and cleaner that runs entirely on your Mac.</p>
+</header>
+
+<!-- TODO (audit D3.3, founder identity): this is the part only you can write. Add a real photo as founder.jpg,
+     fill in your name, why you built Reclaim, and one real profile link, then uncomment.
+<section id="who">
+  <h2>Who makes Reclaim</h2>
+  <div class="founder">
+    <img src="/founder.jpg" width="96" height="96" alt="YOUR NAME">
+    <div>
+      <p>Reclaim is made by YOUR NAME, an indie Mac developer.</p>
+      <p>WHY YOU BUILT RECLAIM, in two or three plain sentences.</p>
+      <p><a href="YOUR X OR LINKEDIN URL">YOUR HANDLE</a> · <a href="mailto:support@reclaimdiskspace.com">support@reclaimdiskspace.com</a></p>
+    </div>
+  </div>
+</section>
+-->
+
+<section id="what">
+  <h2>What Reclaim does</h2>
+  <p>Reclaim shows what's filling up your Mac and helps you free up space safely, without guessing. It does one job, disk space. It isn't an antivirus or a "speed up your Mac" suite.</p>
+  <p>It is a one-time purchase. You choose the price, starting at $5, and there is no subscription. The full feature list is on the <a href="/#features">home page</a>.</p>
+</section>
+
+<section id="touches">
+  <h2>What Reclaim touches</h2>
+  <ul>
+    <li>It looks at the files and folders on your drive so it can show you where the space went.</li>
+    <li>It finds caches, logs, old installers and leftovers from deleted apps, and sorts them by how safe they are to remove.</li>
+    <li>It removes only what you review and confirm. By default, items go to the Trash so you can restore them. Permanent deletion only happens when you choose it.</li>
+    <li>iCloud offload moves files to iCloud Drive or removes local copies of files already stored there.</li>
+  </ul>
+</section>
+
+<section id="never">
+  <h2>What Reclaim doesn't do</h2>
+  <ul>
+    <li>It doesn't delete anything on its own. Nothing is deleted until you review it and confirm.</li>
+    <li>It doesn't collect analytics, track you, or send your files or file names anywhere.</li>
+    <li>It doesn't use an online service to explain files. "What is this?" uses Apple Intelligence on your Mac.</li>
+    <li>It doesn't handle your card details. Stripe processes your payment, and we only receive your email and order details so we can send your download and support you.</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Questions, problems or refund requests: <a href="mailto:support@reclaimdiskspace.com">support@reclaimdiskspace.com</a>. We usually reply within two business days.</p>
+  <p>If Reclaim doesn't work for you, email us within 30 days of purchase and we'll refund you in full. No questions asked.</p>
+  <p><a class="buy" href="https://buy.stripe.com/5kQ5kC1Oa34VeZZdZm0kE00">Buy Reclaim</a></p>
+  <p class="price">Pay what you want, from $5 · One-time purchase, not a subscription · Free updates</p>
+</section>
+
+</div>
+<footer>
+  <div class="wrap">
+    <p>© 2026 Reclaim · Made for the Mac</p>
+    <p><a href="/">Home</a> · <a href="/vs/reclaim-vs-daisydisk">Reclaim vs DaisyDisk</a> · <a href="/vs/reclaim-vs-cleanmymac">Reclaim vs CleanMyMac</a> · <a href="mailto:support@reclaimdiskspace.com">support@reclaimdiskspace.com</a></p>
+  </div>
+</footer>
+</body>
+</html>

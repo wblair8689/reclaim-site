@@ -1,0 +1,53 @@
+# Reclaim
+
+> Reclaim is a Mac disk space analyzer and cleaner. It shows what's filling up your Mac and helps you free up space safely, without guessing. It is a one-time purchase, pay what you want from $5 USD (suggested $8), with all future updates included and no subscription.
+
+Last updated: 2026-11-14
+
+## Product
+
+- Website: https://reclaimdiskspace.com/
+- Category: Mac disk space analyzer and cleaner (macOS utility)
+- Current version: 1.0
+- Who it is for: Mac owners who see "Your disk is almost full" and can't tell what is taking up space on their Mac
+- What it is not: an antivirus or a "speed up your Mac" suite. It only deals with disk space
+
+## Features
+
+- Disk usage map: browse your drive by folder and see exactly where the space went
+- Safe cleanup: finds caches, logs, old installers and leftovers from deleted apps, sorted by how safe they are to remove
+- Large files: lists the biggest files on your Mac so you can decide what to keep
+- Unused apps: shows apps you haven't opened in a long time, with their size, and removes them cleanly
+- iCloud offload: moves files to iCloud Drive or removes local copies of files already stored there
+- "What is this?": explains what an unfamiliar file or folder is for, using Apple Intelligence entirely on your Mac
+
+## Price
+
+- One-time purchase. Pay what you want, starting at $5 USD (suggested $8)
+- Includes all future updates. There is no subscription
+- There is no free trial. There is a 30-day refund, in full, no questions asked
+- Payment, sales tax and receipts are handled by Stripe
+
+## Requirements
+
+- macOS 15 Sequoia or later
+- The "What is this?" explanations need macOS 26 or later on a Mac that supports Apple Intelligence
+- Signed and notarized by Apple
+
+## Safety and privacy
+
+- Nothing is deleted until you review it and confirm
+- By default, items go to the Trash so you can restore them. Permanent deletion only happens when you choose it
+- Reclaim runs entirely on your Mac. It doesn't collect analytics, track you, or send your files or file names anywhere
+- File explanations use Apple Intelligence on your Mac, not an online service
+
+## Pages
+
+- [Home](https://reclaimdiskspace.com/): features, FAQ, pricing, refund policy, terms and privacy
+- [About](https://reclaimdiskspace.com/about): what Reclaim touches and what it doesn't do
+- [Reclaim vs DaisyDisk](https://reclaimdiskspace.com/vs/reclaim-vs-daisydisk): comparison with the one-time-purchase disk analyzer
+- [Reclaim vs CleanMyMac](https://reclaimdiskspace.com/vs/reclaim-vs-cleanmymac): comparison with the subscription Mac care suite
+
+## Contact
+
+- Support and refunds: support@reclaimdiskspace.com (usual reply within two business days)

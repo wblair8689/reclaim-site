@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://reclaimdiskspace.com/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://reclaimdiskspace.com/about</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://reclaimdiskspace.com/vs/reclaim-vs-daisydisk</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://reclaimdiskspace.com/vs/reclaim-vs-cleanmymac</loc>
+    <lastmod>2026-11-14</lastmod>
   </url>
 </urlset>
