@@ -13,142 +13,168 @@
 <meta property="og:description" content="Reclaim shows what's filling up your Mac and helps you safely clean up caches, old installers, large files and unused apps. One-time purchase from $5.">
 <meta property="og:url" content="https://reclaimdiskspace.com/">
 <meta property="og:image" content="https://reclaimdiskspace.com/og-image.png">
-<meta property="og:image:width" content="512">
-<meta property="og:image:height" content="512">
-<meta property="og:image:alt" content="Reclaim app icon">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Reclaim: see what is filling your Mac and clean it up safely">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Reclaim — Mac disk space cleaner and analyzer">
 <meta name="twitter:description" content="Reclaim shows what's filling up your Mac and helps you safely clean up caches, old installers, large files and unused apps. One-time purchase from $5.">
 <meta name="twitter:image" content="https://reclaimdiskspace.com/og-image.png">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Reclaim", "description": "Reclaim shows what's filling up your Mac and helps you safely clean up caches, old installers, large files and unused apps. One-time purchase from $5.", "url": "https://reclaimdiskspace.com/", "image": "https://reclaimdiskspace.com/og-image.png", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS 15 or later", "softwareVersion": "1.0", "offers": {"@type": "Offer", "price": "5.00", "priceCurrency": "USD", "url": "https://reclaimdiskspace.com/", "availability": "https://schema.org/InStock"}}</script>
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-  :root {
-    --bg: #ffffff;
-    --surface: #f5f6f8;
-    --text: #1d1f23;
-    --muted: #5c6370;
-    --border: #e3e5e9;
-    --accent: #2f6fde;
-    --accent-text: #ffffff;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #141518;
-      --surface: #1e2025;
-      --text: #eceef1;
-      --muted: #a2a8b3;
-      --border: #2e3138;
-      --accent: #5b92f0;
-      --accent-text: #0d1220;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-  }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
-  header.hero { text-align: center; padding: 64px 0 40px; }
-  header.hero img { width: 128px; height: 128px; }
-  h1 { font-size: 44px; line-height: 1.1; margin: 16px 0 8px; letter-spacing: -0.02em; }
-  .tagline { font-size: 21px; color: var(--muted); margin: 0 auto 28px; max-width: 520px; }
-  .buy {
-    display: inline-block; background: var(--accent); color: var(--accent-text);
-    text-decoration: none; font-weight: 600; padding: 12px 28px; border-radius: 10px;
-  }
-  .buy[aria-disabled="true"] { opacity: 0.6; cursor: default; }
-  .price { color: var(--muted); font-size: 15px; margin-top: 12px; }
-  nav.links { text-align: center; font-size: 15px; margin-bottom: 8px; }
-  nav.links a { color: var(--muted); margin: 0 10px; }
-  section { padding: 36px 0; border-top: 1px solid var(--border); }
-  h2 { font-size: 26px; margin: 0 0 16px; letter-spacing: -0.01em; }
-  h3 { font-size: 18px; margin: 0 0 4px; }
-  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
-  .card p { margin: 0; color: var(--muted); font-size: 15px; }
-  ul { padding-left: 20px; }
-  li { margin: 4px 0; }
-  .small { font-size: 15px; color: var(--muted); }
-  a { color: var(--accent); }
-  footer { padding: 32px 0 48px; border-top: 1px solid var(--border); text-align: center; font-size: 14px; color: var(--muted); }
-  @media (max-width: 480px) { h1 { font-size: 34px; } .tagline { font-size: 18px; } }
+  :root{--bg:#fff;--surface:#f5f6f8;--text:#1d1f23;--muted:#5c6370;--border:#e3e5e9;--accent:#2f6fde;--accent2:#7a5af8;--accent-text:#fff;--glow:rgba(47,111,222,.14);--bar:rgba(255,255,255,.8)}
+  @media (prefers-color-scheme:dark){:root{--bg:#101114;--surface:#1b1d22;--text:#eceef1;--muted:#a2a8b3;--border:#2c2f36;--accent:#5b92f0;--accent2:#9b84ff;--accent-text:#0d1220;--glow:rgba(91,146,240,.18);--bar:rgba(16,17,20,.8)}}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:70px}
+  body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}
+  a{color:var(--accent)}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  .narrow{max-width:760px}
+  .topbar{position:sticky;top:0;z-index:10;background:var(--bar);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:650;color:var(--text);text-decoration:none}
+  .brand img{width:28px;height:28px}
+  .topbar nav a{color:var(--muted);text-decoration:none;font-size:15px;margin-left:20px}
+  .topbar nav a:hover{color:var(--text)}
+  .topbar nav a.btn,.topbar nav a.btn:hover{color:#fff}
+  .btn{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:600;padding:13px 30px;border-radius:12px;box-shadow:0 6px 20px var(--glow);transition:transform .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.small-btn{padding:7px 16px;font-size:15px;border-radius:9px;margin-left:20px;box-shadow:none}
+  .hero{text-align:center;padding:72px 0 48px;background:radial-gradient(ellipse 70% 60% at 50% 0%,var(--glow),transparent)}
+  .hero img.icon{width:128px;height:128px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.25))}
+  h1{font-size:56px;line-height:1.05;margin:20px auto 14px;letter-spacing:-.03em;max-width:760px}
+  h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tagline{font-size:21px;color:var(--muted);margin:0 auto 30px;max-width:580px}
+  .price{color:var(--muted);font-size:15px;margin-top:14px}
+  .shot{margin:44px auto 0;max-width:880px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:var(--surface);box-shadow:0 30px 70px rgba(0,0,0,.2)}
+  .shot .chrome{height:36px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px;padding-left:14px}
+  .shot .chrome i{width:12px;height:12px;border-radius:50%;background:#ff5f57}
+  .shot .chrome i:nth-child(2){background:#febc2e}.shot .chrome i:nth-child(3){background:#28c840}
+  .shot .body{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;text-align:center;padding:20px}
+  .shot img{display:block;width:100%;height:auto}
+  .trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;padding:36px 0}
+  .trust div{text-align:center;font-size:15px;color:var(--muted);padding:6px 10px}
+  .trust b{display:block;color:var(--text);font-size:16px}
+  section{padding:56px 0}
+  .center{text-align:center}
+  h2{font-size:36px;line-height:1.15;margin:0 0 14px;letter-spacing:-.02em}
+  h3{font-size:18px;margin:0 0 4px}
+  .lead{font-size:19px;color:var(--muted);max-width:640px}
+  .center .lead{margin-left:auto;margin-right:auto}
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-top:32px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .tile{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:12px;background:var(--glow)}
+  .ai{background:linear-gradient(160deg,var(--glow),transparent 60%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .ai .grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .badge{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .checks{list-style:none;padding:0;margin:20px 0 0}
+  .checks li{padding-left:28px;position:relative;margin:10px 0}
+  .checks li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+  .ai .shot{margin:0}
+  .ai .shot{background:#fff}
+  .small{font-size:14px;color:var(--muted)}
+  .center.small,p.small.center{text-align:center}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:36px 0 12px}
+  .gallery .shot{margin:0;box-shadow:0 18px 44px rgba(0,0,0,.16)}
+  .gallery figure{margin:0}
+  .gallery figcaption{margin-top:14px;font-size:15px;color:var(--muted)}
+  .gallery figcaption b{display:block;color:var(--text);font-size:17px}
+  .cta{text-align:center;padding:64px 0}
+  details{border-top:1px solid var(--border);padding:16px 0}
+  details:last-of-type{border-bottom:1px solid var(--border)}
+  summary{cursor:pointer;font-weight:600;font-size:18px}
+  details p,details ul{color:var(--muted);font-size:16px}
+  footer{padding:32px 0 48px;text-align:center;font-size:14px;color:var(--muted)}
+  @media(max-width:760px){.gallery{grid-template-columns:1fr}h1{font-size:38px}.tagline{font-size:18px}h2{font-size:28px}.ai .grid{grid-template-columns:1fr;gap:28px}.topbar nav a:not(.btn){display:none}}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="#top"><img src="icon.png" alt="">Reclaim</a>
+  <nav><a href="#tour">Tour</a><a href="#features">Features</a><a href="#ask">Ask Apple Intelligence</a><a href="#pricing">Pricing</a><a href="#details">Policies</a><a class="btn small-btn" href="https://buy.stripe.com/5kQ5kC1Oa34VeZZdZm0kE00">Buy</a></nav>
+</div></div>
 
-<header class="hero">
-  <img src="icon.png" alt="Reclaim app icon">
-  <h1>Reclaim</h1>
-  <p class="tagline">See what's filling up your Mac and clean it up safely, without guessing.</p>
-  <a class="buy" id="buy" href="https://buy.stripe.com/5kQ5kC1Oa34VeZZdZm0kE00">Buy Reclaim</a>
-  <p class="price">Pay what you want, from $5 · One-time purchase · Free updates</p>
-</header>
+<header class="hero" id="top"><div class="wrap">
+  <img class="icon" src="icon.png" alt="Reclaim app icon">
+  <h1>Find out where your Mac's storage <em>actually went.</em></h1>
+  <p class="tagline">Reclaim shows what's filling your disk and clears it out safely, with an on-device assistant that explains anything you don't recognize.</p>
+  <a class="btn" id="buy" href="https://buy.stripe.com/5kQ5kC1Oa34VeZZdZm0kE00">Buy Reclaim</a>
+  <p class="price">Pay what you want, from $5 · One-time purchase · Free updates · macOS 15+</p>
+  <div class="shot"><img src="screenshots/overview.png" width="1600" height="1032" alt="Reclaim's Overview screen showing disk space available and what can be reclaimed"></div>
+</div></header>
 
-<nav class="links">
-  <a href="#features">Features</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#refunds">Refunds</a>
-  <a href="#contact">Contact</a>
-  <a href="#terms">Terms</a>
-  <a href="#privacy">Privacy</a>
-</nav>
+<div class="wrap"><div class="trust">
+  <div><b>Trash first</b>Nothing is deleted until you confirm</div>
+  <div><b>100% on your Mac</b>No analytics, no uploads</div>
+  <div><b>No subscription</b>Pay once, keep every update</div>
+  <div><b>30-day refund</b>No questions asked</div>
+</div></div>
 
-<section id="features">
-  <h2>What Reclaim does</h2>
-  <div class="features">
-    <div class="card"><h3>Disk usage map</h3><p>Browse your drive by folder and see exactly where the space went.</p></div>
-    <div class="card"><h3>Safe cleanup</h3><p>Finds caches, logs, old installers and leftovers from deleted apps, sorted by how safe they are to remove.</p></div>
-    <div class="card"><h3>Large files</h3><p>Lists the biggest files on your Mac so you can decide what to keep.</p></div>
-    <div class="card"><h3>Unused apps</h3><p>Shows apps you haven't opened in a long time, with their size, and removes them cleanly.</p></div>
-    <div class="card"><h3>iCloud offload</h3><p>Moves files to iCloud Drive or removes local copies of files already stored there.</p></div>
-    <div class="card"><h3>"What is this?"</h3><p>Explains what an unfamiliar file or folder is for, using Apple Intelligence entirely on your Mac.</p></div>
+<section id="ask" class="ai"><div class="wrap"><div class="grid">
+  <div>
+    <span class="badge">Apple Intelligence</span>
+    <h2>Not sure what a file is? Just ask.</h2>
+    <p class="lead">Select any file or folder and click <strong>What is this?</strong> Reclaim explains it in plain English and tells you whether it's safe to remove.</p>
+    <ul class="checks">
+      <li>Plain-language answer with a clear safe / be-careful verdict</li>
+      <li>Runs on Apple Intelligence on your Mac, so your file names never leave it</li>
+      <li>Backed by what Reclaim found about the item, shown so you can check it</li>
+    </ul>
+    <p class="small" style="margin-top:18px">Example shown with sample data. Needs macOS 26 or later on a Mac that supports Apple Intelligence. Everything else in Reclaim works on macOS 15.</p>
   </div>
-  <p class="small">Nothing is deleted until you review it and confirm. By default, items go to the Trash so you can restore them.</p>
-</section>
+  <div class="shot"><img src="screenshots/what-is-this.png" width="1040" height="772" alt="Reclaim's What is this? sheet explaining a folder and marking it likely safe to delete" loading="lazy"></div>
+</div></div></section>
 
-<section id="pricing">
-  <h2>Pricing</h2>
-  <p>Reclaim is a one-time purchase. You choose the price, starting at <strong>$5 USD</strong> (suggested $8). Your purchase includes all future updates. There is no subscription.</p>
-  <p>After checkout you'll get a download link and an email receipt. Payment, sales tax and receipts are handled by Stripe.</p>
-  <p class="small"><strong>Requirements:</strong> macOS 15 Sequoia or later. The "What is this?" explanations need macOS 26 or later on a Mac that supports Apple Intelligence.</p>
-</section>
+<section id="tour" style="padding-top:0"><div class="wrap">
+  <div class="center"><h2>See where the space went, then take it back</h2><p class="lead">Clear lists, sorted by how safe each item is to remove. You review everything before it moves.</p></div>
+  <div class="gallery">
+    <figure><div class="shot"><img src="screenshots/junk-cleanup.png" width="1600" height="1032" alt="Junk Cleanup lists caches and build data marked Safe, and installers and old backups marked Review" loading="lazy"></div><figcaption><b>Junk Cleanup</b>Safe items are pre-selected. Anything that needs a second look is marked Review and left unchecked.</figcaption></figure>
+    <figure><div class="shot"><img src="screenshots/disk-usage.png" width="1600" height="1032" alt="Disk Usage breaking a Movies folder into its biggest subfolders" loading="lazy"></div><figcaption><b>Disk Usage</b>Click through folders to find the one thing that's eating your drive.</figcaption></figure>
+  </div>
+  <p class="small center">Screenshots show sample data.</p>
+</div></section>
 
-<section id="refunds">
-  <h2>Refund policy</h2>
-  <p>If Reclaim doesn't work for you, email us within <strong>30 days</strong> of purchase and we'll refund you in full. No questions asked.</p>
-</section>
+<section id="features"><div class="wrap">
+  <div class="center"><h2>Everything you need to get space back</h2><p class="lead">Five focused tools in one clean window.</p></div>
+  <div class="features">
+    <div class="card"><div class="tile">📊</div><h3>Disk usage map</h3><p>Browse your drive by folder and see exactly where the space went.</p></div>
+    <div class="card"><div class="tile">🧹</div><h3>Safe cleanup</h3><p>Finds caches, logs, old installers and leftovers from deleted apps, sorted by how safe they are to remove.</p></div>
+    <div class="card"><div class="tile">📦</div><h3>Large files</h3><p>Lists the biggest files on your Mac so you can decide what to keep.</p></div>
+    <div class="card"><div class="tile">🗂️</div><h3>Unused apps</h3><p>Shows apps you haven't opened in a long time, with their size, and removes them cleanly.</p></div>
+    <div class="card"><div class="tile">☁️</div><h3>iCloud offload</h3><p>Moves files to iCloud Drive or removes local copies of files already stored there.</p></div>
+    <div class="card"><div class="tile">✨</div><h3>"What is this?"</h3><p>Explains any unfamiliar file or folder using Apple Intelligence, entirely on your Mac.</p></div>
+  </div>
+</div></section>
 
-<section id="contact">
-  <h2>Contact &amp; support</h2>
-  <p>Questions, problems or refund requests: <a href="mailto:support@reclaimdiskspace.com">support@reclaimdiskspace.com</a>. We usually reply within two business days.</p>
-</section>
+<section id="pricing" class="center" style="border-top:1px solid var(--border)"><div class="wrap narrow">
+  <h2>You choose the price</h2>
+  <p class="lead">Reclaim is a one-time purchase starting at <strong>$5 USD</strong> (suggested $8). It includes all future updates, and there is no subscription.</p>
+  <p style="margin:28px 0 8px"><a class="btn" href="https://buy.stripe.com/5kQ5kC1Oa34VeZZdZm0kE00">Buy Reclaim</a></p>
+  <p class="small">After checkout you get a download link and an email receipt. Payment, sales tax and receipts are handled by Stripe.<br><strong>Requires</strong> macOS 15 Sequoia or later.</p>
+</div></section>
 
-<section id="terms">
-  <h2>Terms of sale</h2>
-  <ul>
+<section id="details" style="border-top:1px solid var(--border)"><div class="wrap narrow">
+  <h2>Policies &amp; support</h2>
+  <details id="refunds"><summary>Refund policy</summary><p>If Reclaim doesn't work for you, email us within <strong>30 days</strong> of purchase and we'll refund you in full. No questions asked.</p></details>
+  <details id="contact"><summary>Contact &amp; support</summary><p>Questions, problems or refund requests: <a href="mailto:support@reclaimdiskspace.com">support@reclaimdiskspace.com</a>. We usually reply within two business days.</p></details>
+  <details id="terms"><summary>Terms of sale</summary><ul>
     <li>Your purchase gives you a personal license to use Reclaim on Macs you own or control.</li>
     <li>Reclaim moves files to the Trash by default. Permanent deletion only happens when you choose it. Please keep backups of important files. We aren't responsible for data you choose to delete.</li>
     <li>Reclaim is provided "as is", without warranties of any kind, to the extent the law allows.</li>
-    <li>We may update these terms. The version on this page applies to new purchases.</li>
-  </ul>
-</section>
-
-<section id="privacy">
-  <h2>Privacy</h2>
-  <ul>
+    <li>We may update these terms. The version on this page applies to new purchases.</li></ul></details>
+  <details id="privacy"><summary>Privacy</summary><ul>
     <li>Reclaim runs entirely on your Mac. It doesn't collect analytics, track you, or send your files or file names anywhere.</li>
     <li>File explanations use Apple Intelligence on your Mac, not an online service.</li>
-    <li>When you buy, Stripe processes your payment and receives your email and payment details under <a href="https://stripe.com/privacy">Stripe's privacy policy</a>. We only receive your email and order details so we can send your download and support you.</li>
-  </ul>
-</section>
+    <li>When you buy, Stripe processes your payment and receives your email and payment details under <a href="https://stripe.com/privacy">Stripe's privacy policy</a>. We only receive your email and order details so we can send your download and support you.</li></ul></details>
+</div></section>
 
-</div>
-<footer>
-  <div class="wrap">© 2026 Reclaim · Made for the Mac</div>
-</footer>
+<footer><div class="wrap">© 2026 Reclaim · Made for the Mac</div></footer>
+<script>
+  function openHash(){var e=document.querySelector(location.hash||'#none');if(e&&e.tagName==='DETAILS'){e.open=true;e.scrollIntoView()}}
+  addEventListener('hashchange',openHash);openHash();
+</script>
 </body>
 </html>
