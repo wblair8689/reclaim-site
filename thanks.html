@@ -61,6 +61,7 @@
   footer { padding: 32px 0 48px; border-top: 1px solid var(--border); text-align: center; font-size: 14px; color: var(--muted); }
   @media (max-width: 480px) { h1 { font-size: 34px; } .tagline { font-size: 18px; } }
 </style>
+<script src="https://web-75408198190.us-east4.run.app/t.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -86,5 +87,12 @@
 </div>
 <footer><div class="wrap">© 2026 Reclaim · Made for the Mac</div></footer>
 <script data-goatcounter="https://reclaim.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+  // Count the purchase once per tab, so a reload isn't a second sale.
+  addEventListener("load", function () {
+    try { if (sessionStorage.getItem("mk_purchased")) return; sessionStorage.setItem("mk_purchased", "1"); } catch (e) {}
+    if (window.mkt) mkt.track("purchase");
+  });
+</script>
 </body>
 </html>
